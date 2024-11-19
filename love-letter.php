@@ -98,6 +98,9 @@
                 <option value="jp" class="flex items-center space-x-2 hover:bg-blue-50 transition-all duration-200">
                     <span class="text-lg">🇯🇵</span><span class="font-medium">日本語 (Japanese)</span>
                 </option>
+                <option value="ko" class="flex items-center space-x-2 hover:bg-blue-50 transition-all duration-200">
+                    <span class="text-lg">🇰🇷</span><span class="font-medium">한국어 (Korean)</span>
+                </option>
                 <option value="id" class="flex items-center space-x-2 hover:bg-blue-50 transition-all duration-200" selected>
                     <span class="text-lg">🇮🇩</span><span class="font-medium">Indonesian (Default)</span>
                 </option>
@@ -154,7 +157,7 @@
         <p class="mt-4 text-center text-gray-500 text-sm">
             <span class="text-gray-400">Designed with <i class="text-red-500 fas fa-heart"></i> by</span>
             <a href="https://www.linkedin.com/in/ibrahim-ahmad-falathin-b57243334/" target="_blank" class="text-blue-500 font-semibold hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover:underline flex items-center justify-center space-x-2">
-                <span>Follow me on</span>
+                <span>Connect me on</span>
                 <span class="text-blue-600">LinkedIn</span>
                 <i class="fab fa-linkedin-in text-blue-600"></i>
             </a>
@@ -184,6 +187,79 @@
         </form>
         <p class="mt-4 text-gray-600" id="contact-note">Tulis apa saja yang ingin kamu sampaikan, biar hati kita lebih dekat!</p>
     </div>
+    <br>
+    <br>
+    <hr>
+
+    <footer>
+        <div class="rounded-lg p-4 shadow-md flex items-center space-x-4 max-w-md mx-auto mt-12 mb-6 border-t-2 border-blue-500 bottom-0 left-0 right-0 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
+            <!-- Thumbnail lagu -->
+            <div class="w-16 h-16 bg-blue-300 rounded-lg flex items-center justify-center animate-pulse">
+                <i class="fas fa-umbrella text-white text-3xl"></i> <!-- Ikon payung -->
+            </div>
+            <!-- Informasi Lagu dengan Marquee -->
+            <div class="flex-1">
+                <h3 class="text-blue-800 font-semibold text-lg">
+                    <marquee behavior="scroll" direction="left" scrollamount="8">Oh! Asmara (Instrumental) ~ ♫</marquee>
+                </h3>
+                <p class="text-blue-600 text-sm">
+                    <marquee behavior="scroll" direction="left" scrollamount="8">☂ Kobo Kanaeru ☂ </marquee>
+                </p>
+            </div>
+            <!-- Tombol Play -->
+            <button id="playButton" class="bg-white hover:bg-blue-100 text-blue-500 rounded-full w-12 h-12 flex items-center justify-center border-2 border-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-180 mx-2 my-4">
+                <i class="fas fa-music text-blue-600"></i> <!-- Ikon Melodi -->
+            </button>
+        </div>
+    </footer>
+
+    <!-- Modal Pop-Up untuk YouTube -->
+    <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full transform transition-all duration-300 ease-in-out scale-95 hover:scale-100">
+            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl transition duration-200 ease-in-out transform hover:scale-125">
+                <i class="fas fa-times-circle"></i> <!-- Ikon X untuk menutup modal -->
+            </button>
+            <h2 class="text-blue-800 font-semibold text-2xl mb-4 flex items-center">
+                <i class="fas fa-video text-blue-600 text-3xl mr-2"></i> Listen the Song!
+            </h2>
+            <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/_YRNGQ3gq6w?autoplay=1&controls=0&loop=1&playlist=_YRNGQ3gq6w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <p class="mt-4 text-center text-gray-500 text-sm">
+        <span class="text-gray-400">Designed with <i class="text-red-500 fas fa-heart"></i> by</span>
+        <a href="https://www.instagram.com/p/DCJp7uuTbJg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="text-blue-500 font-semibold hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover:underline flex items-center justify-center space-x-2">
+            <span>Follow me on</span>
+            <span class="text-blue-600">Instagram</span>
+            <i class="fab fa-instagram text-blue-600"></i>
+        </a>
+        <span class="text-gray-400"> and like our internship post!</span>
+    </p>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const modal = document.getElementById('modal');
+        const closeModal = document.getElementById('closeModal');
+        
+        // Menampilkan modal pop-up
+        playButton.addEventListener('click', function () {
+            modal.classList.remove('hidden');
+        });
+        
+        // Menutup modal pop-up
+        closeModal.addEventListener('click', function () {
+            modal.classList.add('hidden');
+        });
+
+        // Optional: Jika ingin menutup modal ketika klik di luar modal
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+
+    </div>     
 
     <script>
         // Language switch functionality
@@ -214,10 +290,15 @@
                 contactNote.innerHTML = 'あなたの心からの言葉を書いてください、もっと近くなりましょう！';
                 textarea.placeholder = '質問、伝えたいこと、心の中の思いはありますか？（心を込めて）';
                 inputName.placeholder = 'あなたの名前は何ですか？愛する人？';
+            } else if (lang === 'ko') {
+                contactTitle.innerHTML = '공유하고 싶은 것이 있나요? 사랑의 메시지를 보내세요!';
+                contactButton.innerHTML = '<i class="fas fa-heart mr-2"></i>사랑의 메시지 보내기';
+                contactNote.innerHTML = '마음속에 있는 말을 적어주세요, 더 가까워져요!';
+                textarea.placeholder = '질문, 마음 털어놓기, 또는 생각 나누기? (진심으로)';
+                inputName.placeholder = '당신의 이름은 무엇인가요? 사랑하는 사람?';
             }
         });
     </script>
-    </div>     
     <script>
         document.getElementById('language').addEventListener('change', function() {
             const lang = this.value;
@@ -258,6 +339,15 @@
                 content4.innerHTML = '<i class="fas fa-hands-clapping"></i> あなたが私をそのまま受け入れてくれるその愛、私は一生守るよ！あなたのために何もかも捧げる覚悟があるんだ、私たちの愛をもっと深く大きく育てたい！';
                 content5.innerHTML = '<i class="fas fa-sad-tear"></i> あなたが疲れているのはわかっているよ、でも私もあなたがいないと心が引き裂かれるほど寂しい！お願い、あなたを感じていたい、毎分、毎秒あなたと一緒にいたい！';
                 closing.innerHTML = '<i class="fas fa-laugh-wink"></i> 愛を込めて、愛、愛！<i class="fas fa-heart text-red-500"></i> ファラティン、あなたを永遠に愛し続ける！<i class="fas fa-heart text-red-500"></i>';
+            } else if (lang === 'ko') {
+                title.innerHTML = '<i class="fas fa-heart text-red-500"></i> 당신에게, 무티아라 페르위타사리, 나의 모든 것!';
+                greeting.innerHTML = '<i class="fas fa-envelope"></i> 안녕하세요, 무티님! 어떻게 지내세요? 저는 당신이 너무 보고 싶어요, 저처럼 혼란스러우신가요?';
+                content.innerHTML = '<i class="fas fa-comment-dots"></i> 오랫동안 말하고 싶었던 게 있어요! 당신은 제가 얼마나 당신을 생각하고 있는지 아시나요?';
+                content2.innerHTML = '<i class="fas fa-heart"></i> 걱정 마세요, 화가 난 게 아니에요! 저는 단지 당신의 마음이 진짜로 어떤지 알고 싶어요. 저는 당신을 정말 소중히 생각하고 있고, 우리의 관계가 단순한 명칭 이상이었으면 좋겠어요!';
+                content3.innerHTML = '<i class="fas fa-question-circle"></i> 솔직히 말해서, 저는 명확한 답변이 필요해요! 우리가 계속 서로를 의심한다면, 아무것도 제대로 되지 않을 거예요! 우리 솔직하게 이야기해봐요, 우리의 관계를 더 강하고 훌륭하게 만들기 위해!';
+                content4.innerHTML = '<i class="fas fa-thumbs-up"></i> 저를 있는 그대로 받아주셔서 감사합니다. 저는 항상 당신을 위해 최선을 다할게요!';
+                content5.innerHTML = '<i class="fas fa-sad-tear"></i> 당신도 지친 걸 알고 있어요, 하지만 당신이 멀리 떠나 있는 것만 생각해도 너무 힘들어요!';
+                closing.innerHTML = '<i class="fas fa-laugh"></i> 모든 사랑을 담아, 사랑, 사랑! 당신을 절대 그만 사랑할 수 없는 팔라틴!';
             }
         
             // Update button text based on selected language
