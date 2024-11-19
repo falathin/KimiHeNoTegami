@@ -77,7 +77,19 @@
                 opacity: 1;
             }
         }
+    .animate-float {
+        animation: float 4s infinite ease-in-out alternate;
+    }
+    @keyframes float {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+        100% {
+            transform: translateY(20px) rotate(10deg);
+        }
+    }
     </style>    
+
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="relative w-full max-w-md p-6 bg-white shadow-lg rounded-lg letter">
@@ -111,7 +123,6 @@
             <span class="inline-block mr-2"><i class="text-red-500 fas fa-heart"></i></span> 
             Untukmu, Mutiara Perwitasari
         </h1>
-    
         <p id="greeting" class="mt-4 text-gray-600 fade-in">
             <span class="inline-block mr-2"><i class="fas fa-envelope"></i></span>
             Hei, Muti-San! Gimana kabarnya? Semoga hari-harimu selalu menyenangkan dan penuh kebahagiaan, bukan stres ya wkwkwk!
@@ -188,30 +199,59 @@
         <p class="mt-4 text-gray-600" id="contact-note">Tulis apa saja yang ingin kamu sampaikan, biar hati kita lebih dekat!</p>
     </div>
     <br>
-    <br>
     <hr>
-
+    <br>
     <footer>
-        <div class="rounded-lg p-4 shadow-md flex items-center space-x-4 max-w-md mx-auto mt-12 mb-6 border-t-2 border-blue-500 bottom-0 left-0 right-0 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105">
-            <!-- Thumbnail lagu -->
-            <div class="w-16 h-16 bg-blue-300 rounded-lg flex items-center justify-center animate-pulse">
-                <i class="fas fa-umbrella text-white text-3xl"></i> <!-- Ikon payung -->
+    <div class="rounded-lg p-2 shadow-sm flex items-center space-x-3 max-w-sm mx-auto mt-8 mb-4 border-t border-blue-400 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 relative bg-cover bg-center group" 
+        style="background-image: url('maxresdefault.jpg');">
+        <!-- Overlay untuk membuat teks lebih jelas -->
+        <div class="absolute inset-0 bg-blue-900 bg-opacity-30 rounded-lg group-hover:bg-opacity-40 transition duration-300"></div>
+        <!-- Konten Footer -->
+        <div class="relative z-10 flex items-center w-full space-x-3">
+            <!-- Thumbnail Lagu -->
+            <div class="w-10 h-10 bg-blue-300 rounded-md flex items-center justify-center relative overflow-hidden group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-purple-500 transition duration-300">
+                <!-- Background dengan blur -->
+                <div class="absolute inset-0 bg-blue-300 blur-md group-hover:opacity-50 transition duration-300"></div>
+                <!-- Ikon Payung -->
+                <i class="fas fa-umbrella text-white text-xl relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
             </div>
             <!-- Informasi Lagu dengan Marquee -->
             <div class="flex-1">
-                <h3 class="text-blue-800 font-semibold text-lg">
-                    <marquee behavior="scroll" direction="left" scrollamount="8">Oh! Asmara (Instrumental) ~ ♫</marquee>
-                </h3>
-                <p class="text-blue-600 text-sm">
-                    <marquee behavior="scroll" direction="left" scrollamount="8">☂ Kobo Kanaeru ☂ </marquee>
+                <p class="text-white font-medium text-sm group-hover:text-blue-200 transition duration-300">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">Oh! Asmara (Instrumental) ~ ♫</marquee>
+                </p>
+                <p class="text-white text-xs group-hover:text-blue-100 transition duration-300">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">☂ Kobo Kanaeru ☂</marquee>
                 </p>
             </div>
-            <!-- Tombol Play -->
-            <button id="playButton" class="bg-white hover:bg-blue-100 text-blue-500 rounded-full w-12 h-12 flex items-center justify-center border-2 border-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-180 mx-2 my-4">
-                <i class="fas fa-music text-blue-600"></i> <!-- Ikon Melodi -->
+            <!-- Tombol Play dengan Outline -->
+            <button id="playButton" class="bg-transparent text-white rounded-md w-8 h-8 flex items-center justify-center border-2 border-white transition-all duration-300 ease-in-out transform hover:scale-125 hover:bg-blue-400 hover:text-blue-200">
+                <i class="fas fa-music text-white transition-transform duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125"></i> <!-- Ikon Melodi -->
             </button>
         </div>
+        <!-- SVG Bunga Sakura -->
+        <div class="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <!-- Bunga Sakura Pertama -->
+            <svg class="absolute w-8 h-8 text-pink-300 animate-float top-5 left-14 hover:text-pink-400 transition duration-300 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
+            </svg>
+            <!-- Bunga Sakura Kedua -->
+            <svg class="absolute w-10 h-10 text-pink-400 animate-float top-3 right-12 hover:text-pink-500 transition duration-300 ease-in-out transform hover:rotate-12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
+            </svg>
+            <!-- Bunga Sakura Ketiga (lebih kecil) -->
+            <svg class="absolute w-6 h-6 text-pink-200 animate-float top-3 left-10 hover:text-pink-300 transition duration-300 ease-in-out transform hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
+            </svg>
+            <!-- Bunga Sakura Keempat (dengan opacity berkurang) -->
+            <svg class="absolute w-7 h-7 text-pink-300 opacity-80 animate-float top-2 right-8 hover:text-pink-400 transition duration-300 ease-in-out transform hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
+            </svg>
+        </div>
+    </div>
     </footer>
+
+    <br>
 
     <!-- Modal Pop-Up untuk YouTube -->
     <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center hidden">
@@ -396,116 +436,102 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;  // Use port 587 for TLS
 
-            // Recipients
             $mail->setFrom('ibrahimahmadfalatin@gmail.com', 'Ibrahim');  // Your email address
             $mail->addAddress('ibrahimahmadfalatin@gmail.com', 'Ibrahim');  // Recipient's email
 
             $mail->isHTML(true);
             $mail->Subject = 'Pesan Baru Dari ' . $name;
-            
-            // Beautified HTML Body with Romantic Theme
-            $mail->Body    = '
-                <html>
-                <head>
-                    <style>
-                        body {
-                            font-family: "Georgia", serif;
-                            background-color: #f9f3f3;
-                            margin: 0;
-                            padding: 0;
-                            color: #4e4e4e;
-                        }
-                        .container {
-                            width: 100%;
-                            max-width: 700px;
-                            margin: 30px auto;
-                            padding: 40px;
-                            background-color: #ffffff;
-                            border-radius: 12px;
-                            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-                            border-top: 5px solid #ff99cc;
-                        }
-                        h3 {
-                            color: #d76d7e;
-                            font-size: 2em;
-                            text-align: center;
-                            margin-bottom: 30px;
-                            font-style: italic;
-                            letter-spacing: 2px;
-                        }
-                        .message-content {
-                            font-size: 1.1em;
-                            color: #555555;
-                            line-height: 1.8;
-                            text-align: center;
-                            margin-bottom: 30px;
-                            padding: 20px;
-                            background-color: #fff1f4;
-                            border-radius: 8px;
-                        }
-                        .footer {
-                            font-size: 0.9em;
-                            color: #b3b3b3;
-                            text-align: center;
-                            margin-top: 40px;
-                            padding-top: 15px;
-                            border-top: 1px dashed #ff99cc;
-                        }
-                        .button {
-                            display: inline-block;
-                            padding: 12px 30px;
-                            background-color: #ff69b4;
-                            color: #ffff;
-                            text-decoration: none;
-                            border-radius: 8px;
-                            font-weight: bold;
-                            font-size: 1.1em;
-                            text-transform: uppercase;
-                            margin-top: 20px;
-                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                            transition: background-color 0.3s ease;
-                        }
-                        .button:hover {
-                            background-color: #ff3385;
-                            text-decoration: none;
-                        }
-                        .signature {
-                            font-family: "Lucida Handwriting", cursive;
-                            font-size: 1.2em;
-                            color: #d76d7e;
-                            text-align: center;
-                            margin-top: 30px;
-                            font-style: italic;
-                        }
-                        .heart {
-                            color: #ff4d8d;
-                            font-size: 1.5em;
-                            text-align: center;
-                            margin-top: 10px;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <h3>Pesan Cinta Baru Dari: ' . $name . '</h3>
-                        <div class="message-content">
-                            <p><strong>Pesan:</strong><br>' . nl2br($message) . '</p>
-                            <p><strong>Nama Pengirim:</strong> ' . $name . '</p>
-                        </div>
-                        <div class="footer">
-                            <p>Terima kasih telah mengirimkan pesan hati Anda!</p>
-                            <a href="https://wa.me/6285885848027" class="button">Balas Pesan</a>
-                        </div>
-                        <div class="signature">
-                            <p>Kubuat Dengan Cinta,</p>
-                            <p>Ibrahim Ahmad Falathin</p>
-                        </div>
-                        <div class="heart">
-                            <p>❤️</p>
-                        </div>
+
+            $mail->Body = '
+            <html>
+            <head>
+                <style>
+                    body {
+                        font-family: "Arial", sans-serif;
+                        background-color: #f4f4f4;
+                        margin: 0;
+                        padding: 0;
+                        color: #444;
+                    }
+                    .container {
+                        width: 100%;
+                        max-width: 600px;
+                        margin: 30px auto;
+                        padding: 30px;
+                        background-color: #ffffff;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                        border-left: 6px solid #4caf50;
+                    }
+                    h3 {
+                        color: #4caf50;
+                        font-size: 1.8em;
+                        text-align: center;
+                        margin-bottom: 20px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                    }
+                    .message-content {
+                        font-size: 1em;
+                        color: #555;
+                        line-height: 1.6;
+                        margin-bottom: 20px;
+                        padding: 15px;
+                        background-color: #f9f9f9;
+                        border-radius: 8px;
+                        border: 1px solid #e0e0e0;
+                    }
+                    .footer {
+                        font-size: 0.9em;
+                        color: #888;
+                        text-align: center;
+                        margin-top: 30px;
+                        padding-top: 10px;
+                        border-top: 1px solid #e0e0e0;
+                    }
+                    .button {
+                        display: inline-block;
+                        padding: 10px 25px;
+                        background-color: #4caf50;
+                        color: #ffffff;
+                        text-decoration: none;
+                        border-radius: 6px;
+                        font-weight: bold;
+                        font-size: 1em;
+                        transition: background-color 0.3s ease;
+                    }
+                    .button:hover {
+                        background-color: #43a047;
+                        text-decoration: none;
+                    }
+                    .signature {
+                        font-family: "Georgia", serif;
+                        font-size: 1em;
+                        color: #666;
+                        text-align: center;
+                        margin-top: 20px;
+                        font-style: italic;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h3>Pesan Baru Dari: ' . $name . '</h3>
+                    <div class="message-content">
+                        <p><strong>Pesan:</strong><br>' . nl2br($message) . '</p>
                     </div>
-                </body>
-                </html>';
+                    <div class="footer">
+                        <p>Terima kasih telah mengirim pesan Anda.</p>
+                        <a href="https://wa.me/6285885848027" class="button">Balas Pesan</a>
+                    </div>
+                    <div class="signature">
+                        <p>Hormat kami,</p>
+                        <p>Ibrahim Ahmad Falathin</p>
+                    </div>
+                </div>
+            </body>
+            </html>';
+
             
             // Send the email
             $mail->send();
