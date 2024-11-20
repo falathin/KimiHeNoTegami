@@ -9,6 +9,33 @@
     <script src="https://cdn.jsdelivr.net/npm/@heroicons/react@1.0.6/outline/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+ /* Animasi Berputar untuk Ikon Melodi */
+        .animate-spin-slow {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Animasi Mengambang untuk Sakura */
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
         .fade-in {
             opacity: 0;
             animation: fadeIn 3s forwards;
@@ -224,10 +251,10 @@
                     <marquee behavior="scroll" direction="left" scrollamount="6">☂ Kobo Kanaeru ☂</marquee>
                 </p>
             </div>
-            <!-- Tombol Play dengan Outline -->
-            <button id="playButton" class="bg-transparent text-white rounded-md w-8 h-8 flex items-center justify-center border-2 border-white transition-all duration-300 ease-in-out transform hover:scale-125 hover:bg-blue-400 hover:text-blue-200">
-                <i class="fas fa-music text-white transition-transform duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125"></i> <!-- Ikon Melodi -->
-            </button>
+        <!-- Tombol Play dengan Animasi Berputar -->
+        <button id="playButton" class="bg-transparent text-white rounded-md w-8 h-8 flex items-center justify-center border-2 border-white transition-transform duration-300 ease-in-out hover:scale-125 hover:bg-blue-400 hover:text-blue-200">
+            <i class="fas fa-music text-white animate-spin-slow"></i> <!-- Ikon Melodi -->
+        </button>
         </div>
         <!-- SVG Bunga Sakura -->
         <div class="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
