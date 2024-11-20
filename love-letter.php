@@ -202,35 +202,42 @@
         </p>        
         <br><hr><br>
         <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 rounded-b-lg"></div>
-    <!-- Contact Form -->
-    <div class="mt-6 text-center transition-all duration-200 ease-in-out">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4" id="contact-title">Ada yang ingin kamu sampaikan dari hati? Kirimkan Pesan Cinta!</h2>
-        <form id="contact-form" method="POST">
-            <!-- Input untuk Nama Pengirim -->
-            <div class="relative mb-4">
-                <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                <input type="text" name="name" id="sendername" placeholder="Siapa Namamu?" class="w-full max-w-md p-4 pl-12 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" required>
-            </div>
+        <!-- Contact Form -->
+        <div class="mt-6 text-center transition-all duration-200 ease-in-out">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4" id="contact-title">Ada yang ingin kamu sampaikan dari hati? Kirimkan Pesan Cinta!</h2>
+            <form id="contact-form" method="POST">
+                <!-- Input untuk Nama Pengirim -->
+                <div class="relative mb-4">
+                    <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                    <input type="text" name="name" id="sendername" 
+                        value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>" 
+                        placeholder="Siapa Namamu?" 
+                        class="w-full max-w-md p-4 pl-12 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" 
+                        required>
+                </div>
 
-            <!-- Input untuk Pesan -->
-            <div class="relative mb-4">
-                <i class="fas fa-comment-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
-                <textarea name="message" rows="4" class="w-full max-w-md p-4 pl-12 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" placeholder="Apa yang ada di hatimu? (Tuliskan apa saja yang ingin kamu ungkapkan)" required></textarea>
-            </div>
+                <!-- Input untuk Pesan -->
+                <div class="relative mb-4">
+                    <i class="fas fa-comment-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                    <textarea name="message" rows="4" 
+                            class="w-full max-w-md p-4 pl-12 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" 
+                            placeholder="Apa yang ada di hatimu? (Tuliskan apa saja yang ingin kamu ungkapkan)" 
+                            required><?= isset($_POST['message']) ? htmlspecialchars($_POST['message']) : ''; ?></textarea>
+                </div>
 
-            <!-- Tombol Kirim Pesan -->
-            <button type="submit" class="mt-4 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200 ease-in-out" id="contact-button">
-                <i class="fas fa-heart mr-2"></i> Kirimkan Pesan Cinta
-            </button>
-        </form>
-        <p class="mt-4 text-gray-600" id="contact-note">Tulis apa saja yang ingin kamu sampaikan, biar hati kita lebih dekat!</p>
-    </div>
+                <!-- Tombol Kirim Pesan -->
+                <button type="submit" class="mt-4 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200 ease-in-out" id="contact-button">
+                    <i class="fas fa-heart mr-2"></i> Kirimkan Pesan Cinta
+                </button>
+            </form>
+            <p class="mt-4 text-gray-600" id="contact-note">Tulis apa saja yang ingin kamu sampaikan, biar hati kita lebih dekat!</p>
+        </div>
     <br>
     <hr>
     <br>
     <footer>
     <div class="rounded-lg p-2 shadow-sm flex items-center space-x-3 max-w-sm mx-auto mt-8 mb-4 border-t border-blue-400 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 relative bg-cover bg-center group" 
-        style="background-image: url('maxresdefault.jpg');">
+        style="background-image: url('https://i.ytimg.com/vi/DR43SQx8Ybc/maxresdefault.jpg');">
         <!-- Overlay untuk membuat teks lebih jelas -->
         <div class="absolute inset-0 bg-blue-900 bg-opacity-30 rounded-lg group-hover:bg-opacity-40 transition duration-300"></div>
         <!-- Konten Footer -->
@@ -327,7 +334,7 @@
     </script>
 
     </div>     
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Language switch functionality
         document.getElementById('language').addEventListener('change', function() {
@@ -474,100 +481,157 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <head>
                 <style>
                     body {
-                        font-family: "Arial", sans-serif;
-                        background-color: #f4f4f4;
+                        font-family: "Georgia", serif;
+                        background-color: #fff0f0;
                         margin: 0;
                         padding: 0;
                         color: #444;
                     }
                     .container {
                         width: 100%;
-                        max-width: 600px;
-                        margin: 30px auto;
-                        padding: 30px;
+                        max-width: 750px;
+                        margin: 20px auto;
                         background-color: #ffffff;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                        border-left: 6px solid #4caf50;
+                        border: 2px solid #ffb3b3;
+                        border-radius: 15px;
+                        padding: 30px;
+                        box-shadow: 0 8px 20px rgba(255, 102, 102, 0.3);
+                        position: relative;
+                        overflow: hidden;
                     }
-                    h3 {
-                        color: #4caf50;
-                        font-size: 1.8em;
+                    .background-heart {
+                        position: absolute;
+                        top: -50px;
+                        left: -50px;
+                        height: 200px;
+                        width: 200px;
+                        background-size: contain;
+                        opacity: 0.2;
+                        z-index: -1;
+                    }
+                    .header {
                         text-align: center;
-                        margin-bottom: 20px;
-                        font-weight: 600;
-                        letter-spacing: 1px;
+                        margin-bottom: 25px;
+                    }
+                    .header img {
+                        height: 100px;
+                    }
+                    .header h1 {
+                        font-size: 2.5em;
+                        color: #ff4d4d;
+                        margin: 15px 0;
+                        font-family: "Cursive", sans-serif;
+                    }
+                    .content {
+                        margin: 25px 0;
+                    }
+                    .content h3 {
+                        font-size: 1.8em;
+                        color: #ff6666;
+                        margin-bottom: 15px;
                     }
                     .message-content {
-                        font-size: 1em;
+                        font-size: 1.3em;
                         color: #555;
-                        line-height: 1.6;
-                        margin-bottom: 20px;
-                        padding: 15px;
-                        background-color: #f9f9f9;
-                        border-radius: 8px;
-                        border: 1px solid #e0e0e0;
+                        line-height: 1.8;
+                        margin-bottom: 25px;
+                        padding: 20px;
+                        background-color: #fff0f0;
+                        border-radius: 10px;
+                        border: 2px solid #ffe0e0;
                     }
                     .footer {
-                        font-size: 0.9em;
-                        color: #888;
+                        font-size: 1em;
+                        color: #777;
                         text-align: center;
                         margin-top: 30px;
-                        padding-top: 10px;
-                        border-top: 1px solid #e0e0e0;
-                    }
-                    .button {
-                        display: inline-block;
-                        padding: 10px 25px;
-                        background-color: #4caf50;
-                        color: #ffffff;
-                        text-decoration: none;
-                        border-radius: 6px;
-                        font-weight: bold;
-                        font-size: 1em;
-                        transition: background-color 0.3s ease;
-                    }
-                    .button:hover {
-                        background-color: #43a047;
-                        text-decoration: none;
+                        padding-top: 15px;
+                        border-top: 2px solid #ffe0e0;
                     }
                     .signature {
                         font-family: "Georgia", serif;
-                        font-size: 1em;
-                        color: #666;
-                        text-align: center;
-                        margin-top: 20px;
+                        font-size: 1.2em;
+                        color: #ff4d4d;
+                        margin-top: 25px;
                         font-style: italic;
+                        text-align: right;
+                    }
+                    .heart {
+                        color: #ff4d4d;
+                        font-size: 1.8em;
+                        margin: 0 5px;
+                    }
+                    .button {
+                        display: inline-block;
+                        padding: 12px 25px;
+                        background-color: #ff4d4d;
+                        color: #ffffff;
+                        text-decoration: none;
+                        border-radius: 8px;
+                        font-weight: bold;
+                        transition: background-color 0.3s ease;
+                        margin-top: 20px;
+                    }
+                    .button:hover {
+                        background-color: #e03e3e;
                     }
                 </style>
             </head>
             <body>
-                <div class="container">
-                    <h3>Pesan Baru Dari: ' . $name . '</h3>
+            <div class="container">
+                <div class="background-heart"></div>
+                <div class="header">
+                    <img src="https://png.pngtree.com/png-clipart/20230313/original/pngtree-love-letter-valentines-day-png-image_8985328.png" alt="Love Logo">
+                    <h1>あなたへのラブレター</h1>
+                </div>
+                <div class="content">
+                    <h3>差出人: ' . $name . '</h3>
                     <div class="message-content">
-                        <p><strong>Pesan:</strong><br>' . nl2br($message) . '</p>
-                    </div>
-                    <div class="footer">
-                        <p>Terima kasih telah mengirim pesan Anda.</p>
-                        <a href="https://wa.me/6285885848027" class="button">Balas Pesan</a>
-                    </div>
-                    <div class="signature">
-                        <p>Hormat kami,</p>
-                        <p>Ibrahim Ahmad Falathin</p>
+                        <p><strong><span class="heart">❤</span> メッセージ:</strong><br>' . nl2br($message) . '</p>
                     </div>
                 </div>
-            </body>
-            </html>';
-
+                <div class="footer">
+                    <p>この人生で特別な存在になってくれてありがとう。<br> 愛を込めて返信してください！</p>
+                    <a href="https://wa.me/6285885848027" class="button">メッセージに返信する</a>
+                </div>
+                <div class="signature">
+                    いつもあなたを愛しています、<br>
+                    <strong>イブラヒム・アハマド・ファラシン</strong><br>
+                    <span class="heart">❤</span>
+                </div>
+            </div>
+        </body>
+        </html>';
             
-            // Send the email
             $mail->send();
-            $statusMessage = "<script>alert('Pesan berhasil terkirim!');</script>"; // Display success message
+
+            echo "<script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Pesan Terkirim!',
+                    text: 'Pesan cinta kamu sudah berhasil dikirim!',
+                    confirmButtonText: 'OK'
+                });
+            </script>";
         } catch (Exception $e) {
-            $statusMessage = "<script>alert('Gagal mengirim pesan. Error: " . $mail->ErrorInfo . "');</script>"; // Display error message
+            echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal Mengirim!',
+                    text: 'Terjadi kesalahan: {$mail->ErrorInfo}',
+                    confirmButtonText: 'Coba Lagi'
+                });
+            </script>";
         }
     } else {
-        $statusMessage = "<script>alert('Harap isi semua kolom sebelum mengirim pesan.');</script>"; // Display validation message
+        echo "<script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Input Tidak Lengkap!',
+                text: 'Harap isi semua kolom sebelum mengirim pesan.',
+                confirmButtonText: 'OK'
+            });
+        </script>";
     }
 }
 ?>
