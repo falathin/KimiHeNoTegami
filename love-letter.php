@@ -275,9 +275,34 @@
     </div>
     </footer>
 
-    <audio autoplay>
-        <source src="Oh! Asmara （Instrumental）.mp4" type="audio/mp3">
+    <audio id="audioPlayer" autoplay loop>
+        <source src="Oh! Asmara （Instrumental）.mp4" type="audio/mp4">
     </audio>
+
+    <!-- Mute/Unmute Button -->
+    <button id="muteButton" 
+        class="bg-blue-500 text-white px-6 py-2 rounded-full shadow-lg hover:bg-blue-600 transition focus:outline-none">
+        🔈 Mute
+    </button>
+    <br><br>
+
+    <p class="text-gray-500">Maybe your browser doesn't support mute audio (╥﹏╥)</p>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const muteButton = document.getElementById('muteButton');
+
+        // Toggle mute/unmute
+        muteButton.addEventListener('click', () => {
+            if (audioPlayer.muted) {
+                audioPlayer.muted = false;
+                muteButton.textContent = '🔈 Mute';
+            } else {
+                audioPlayer.muted = true;
+                muteButton.textContent = '🔇 Unmute';
+            }
+        });
+    </script>
 
     <br>
 
@@ -514,9 +539,9 @@
             }
         }
 
-        
+
     </script>
-    
+
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
