@@ -8,6 +8,8 @@
     <title>ムティアラ・ペルウィタサリへのラブレター</title>
     <script src="https://cdn.jsdelivr.net/npm/@heroicons/react@1.0.6/outline/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <style>
  /* Animasi Berputar untuk Ikon Melodi */
         .animate-spin-slow {
@@ -45,59 +47,59 @@
             opacity: 0;
             animation: fadeIn 100s forwards;
         }
-    
+
         .fade-in:nth-child(1) {
             animation-delay: 1s;
         }
-    
+
         .fade-in:nth-child(2) {
             animation-delay: 3s;
         }
-    
+
         .fade-in:nth-child(3) {
             animation-delay: 5s;
         }
-    
+
         .fade-in:nth-child(4) {
             animation-delay: 7s;
         }
-    
+
         .fade-in:nth-child(5) {
             animation-delay: 8s;
         }
-    
+
         .fade-in:nth-child(6) {
             animation-delay: 10s;
         }
-    
+
         .fade-in:nth-child(7) {
             animation-delay: 12s;
         }
-    
+
         .fade-in:nth-child(8) {
             animation-delay: 14s;
         }
-    
+
         .fade-in:nth-child(9) {
             animation-delay: 16s;
         }
-    
+
         .fade-in:nth-child(10) {
             animation-delay: 18s;
         }
-    
+
         .slide-in {
             transform: translateX(-10px);
             opacity: 0;
             animation: slideIn 12s forwards;
         }
-    
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
             }
         }
-    
+
         @keyframes slideIn {
             to {
                 transform: translateX(0);
@@ -121,7 +123,7 @@
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="relative w-full max-w-md p-6 bg-white shadow-lg rounded-lg letter">
         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 rounded-t-lg"></div>
-    
+
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 sm:space-x-4 p-4 bg-gray-50 rounded-lg shadow-md">
             <label for="language" class="text-lg font-semibold text-gray-700 flex items-center space-x-2">
                 <span>Pilih Bahasa:</span>
@@ -145,7 +147,7 @@
                 </option>
             </select>
         </div>              
-    
+
         <h1 id="title" class="text-2xl font-bold text-center text-gray-800 mt-4 fade-in">
             <span class="inline-block mr-2"><i class="text-red-500 fas fa-heart"></i></span> 
             Untukmu, Mutiara Perwitasari
@@ -154,44 +156,44 @@
             <span class="inline-block mr-2"><i class="fas fa-envelope"></i></span>
             Hei, Muti-San! Gimana kabarnya? Semoga hari-harimu selalu menyenangkan dan penuh kebahagiaan, bukan stres ya wkwkwk!
         </p>
-    
+
         <p id="content" class="mt-2 text-gray-600 fade-in">
             <span class="inline-block mr-2"><i class="fas fa-comment-dots"></i></span>
             Aku cuma pengen ngobrol sedikit, ya. Jadi, setelah kamu bilang kalau kamu masih nganggep aku temen, aku jadi mikir, deh. Kan kita udah pacaran, ya? Atau mungkin aku yang terlalu mikir, jadi aku bingung. 
         </p>
-    
+
         <p id="content-2" class="mt-2 text-gray-600 fade-in">
             <span class="inline-block mr-2"><i class="fas fa-heart"></i></span>
             Tapi jangan salah paham, aku nggak marah sama sekali! Aku cuma pengen tahu, sebenarnya kamu merasa gimana. Aku sayang banget sama kamu dan pengen hubungan ini jadi sesuatu yang berarti buat kita berdua. Aku siap kok kalau kamu butuh waktu atau ruang, aku nggak akan buru-buru.
         </p>
-    
+
         <p id="content-3" class="mt-2 text-gray-600 fade-in">
             <span class="inline-block mr-2"><i class="fas fa-question-circle"></i></span>
             Denger jawaban kamu, aku sih udah puas. Tapi ya tetep aja, aku tetap cinta kamu, gapapa jijik, kamu anggap aja aku temen aja aku udah seneng kok.
         </p>        
-    
+
         <!-- New Paragraphs Added -->
         <p id="content-4" class="mt-2 text-gray-600 fade-in">
             <span class="inline-block mr-2"><i class="fas fa-thumbs-up"></i></span>
             Terima kasih udah nerima aku apa adanya. Aku cuma pengen jadi yang terbaik buat kamu, biar kita bisa saling mendukung dan pengertian.
         </p>
-    
+
         <p id="content-5" class="mt-2 text-gray-600 fade-in">
             <span class="inline-block mr-2"><i class="fas fa-sad-tear"></i></span>
             Aku sadar mungkin aku pernah bikin kamu capek atau nggak nyaman, dan aku minta maaf kalau itu terjadi. Aku nggak berharap kamu selalu ngerti perasaanku, yang penting hubungan kita tetap terikat.
         </p>
-    
+
         <p id="closing" class="mt-4 text-right text-gray-800 slide-in">
             <span class="inline-block mr-2"><i class="fas fa-laugh"></i></span>
             Terima kasih untuk segala perhatian dan masa seru yang kamu beri. Aku jadi kangen masa-masa kita bareng<br><br><strong>- Falathin</strong>
         </p>
-    
+
         <div class="mt-6 text-center fade-in-btn">
             <button id="buttonText" class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200 ease-in-out">
                 Sebenarnya aku lagi galau in kamu
             </button>
         </div>
-    
+
         <p class="mt-4 text-center text-gray-500 text-sm">
             <span class="text-gray-400">Designed with <i class="text-red-500 fas fa-heart"></i> by</span>
             <a href="https://www.linkedin.com/in/ibrahim-ahmad-falathin-b57243334/" target="_blank" class="text-blue-500 font-semibold hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover:underline flex items-center justify-center space-x-2">
@@ -295,7 +297,7 @@
         <div id="modal" class="fixed inset-0 bg-blue-900 bg-opacity-70 flex justify-center items-center hidden">
             <div id="modalContent" class="bg-white p-4 sm:p-6 rounded-lg shadow-xl max-w-lg w-full transform transition-all duration-300 ease-in-out relative overflow-hidden cursor-grab">
                 <!-- Efek Hujan -->
-                <div class="absolute inset-0 bg-[url('https://i.ibb.co/k8zkN5Z/rain-pattern.png')] opacity-30 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-[url('https://i.pinimg.com/736x/9e/59/45/9e59459cb08bb77da287584102ef9e4a.jpg')] opacity-30 pointer-events-none"></div>
 
                 <!-- Tombol Tutup -->
                 <button id="closeModal" class="absolute top-2 right-2 text-blue-400 hover:text-blue-600 text-xl sm:text-2xl transition transform duration-200 hover:scale-125 z-10">
@@ -360,37 +362,51 @@
                     </p>
                 </div>
 
-                <!-- Footer -->
                 <div class="text-center mt-4 sm:mt-6 relative z-10">
-                    <button id="closeModalButton" class="px-4 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-200">
-                        Tutup
+                    <button id="lovecloseModal" class="flex items-center justify-center w-10 h-10 bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600 transition-all duration-200">
+                        <i class="fas fa-heart text-lg"></i>
                     </button>
                 </div>
+
+                <script>
+                    // Tombol lovecloseModal
+                    const lovecloseModal = document.getElementById('lovecloseModal');
+
+                    // Fungsi menampilkan alert cantik
+                    lovecloseModal.addEventListener('click', function () {
+                        Swal.fire({
+                            title: '好き好き好き!!',
+                            text: 'とても大好きでたまらない!!',
+                            icon: 'success', // Ikon berupa centang
+                            confirmButtonText: 'わかりました!',
+                            confirmButtonColor: '#f43f5e',
+                            backdrop: `rgba(0, 0, 0, 0.6)`,
+                        });
+                    });
+                </script>
+
             </div>
         </div>
 
-    <script>
-        const playButton = document.getElementById('playButton');
-        const modal = document.getElementById('modal');
-        const closeModal = document.getElementById('closeModal');
-        
-        // Menampilkan modal pop-up
-        playButton.addEventListener('click', function () {
-            modal.classList.remove('hidden');
-        });
-        
-        // Menutup modal pop-up
-        closeModal.addEventListener('click', function () {
-            modal.classList.add('hidden');
-        });
+        <script>
+            const playButton = document.getElementById('playButton');
+            const modal = document.getElementById('modal');
+            const closeModal = document.getElementById('closeModal');
 
-        // Optional: Jika ingin menutup modal ketika klik di luar modal
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
+            playButton.addEventListener('click', function () {
+                modal.classList.remove('hidden');
+            });
+
+            closeModal.addEventListener('click', function () {
                 modal.classList.add('hidden');
-            }
-        });
-    </script>
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        </script>
 
     </div>     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -435,7 +451,7 @@
     <script>
         document.getElementById('language').addEventListener('change', function() {
             const lang = this.value;
-        
+
             const title = document.getElementById('title');
             const greeting = document.getElementById('greeting');
             const content = document.getElementById('content');
@@ -444,7 +460,7 @@
             const content4 = document.getElementById('content-4');
             const content5 = document.getElementById('content-5');
             const closing = document.getElementById('closing');
-        
+
             if (lang === 'su') {
                 title.innerHTML = '<i class="fas fa-heart text-red-500"></i> Pikeun Anjeun, Mutiara Perwitasari, Anu Pangsaena Dina Jagat Raya!';
                 greeting.innerHTML = '<i class="fas fa-envelope"></i> Euy, Muti-San! Kumaha kabarna? Abdi rindu pisan ka anjeun, dupi anjeun teu bingung?';
@@ -482,14 +498,13 @@
                 content5.innerHTML = '<i class="fas fa-sad-tear"></i> 당신도 지친 걸 알고 있어요, 하지만 당신이 멀리 떠나 있는 것만 생각해도 너무 힘들어요!';
                 closing.innerHTML = '<i class="fas fa-laugh"></i> 모든 사랑을 담아, 사랑, 사랑! 당신을 절대 그만 사랑할 수 없는 팔라틴!';
             }
-        
-            // Update button text based on selected language
+
             updateButtonText(lang);
         });
-        
+
         function updateButtonText(lang) {
             const buttonText = document.getElementById('buttonText');
-        
+
             if (lang === 'su') {
                 buttonText.innerHTML = "Sakumaha anu ku abdi rasakeun, memang kuring deui galau ka anjeun";
             } else if (lang === 'en') {
@@ -498,7 +513,12 @@
                 buttonText.innerHTML = "実は、あなたについて迷っています";
             }
         }
+
+        
     </script>
+    
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
@@ -509,7 +529,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-$statusMessage = '';  // Initialize status message
+$statusMessage = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['name'], $_POST['message'])) {
@@ -661,7 +681,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </body>
         </html>';
-            
+
             $mail->send();
 
             echo "<script>
