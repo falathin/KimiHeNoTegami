@@ -286,7 +286,7 @@
     </button>
     <br><br>
 
-    <p class="text-gray-500">Maybe your browser doesn't support mute audio (╥﹏╥)</p>
+    <p class="text-gray-500" id="content-10">Mungkin browser Anda tidak mendukung mute audio (╥﹏╥)</p>
 
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
@@ -317,7 +317,6 @@
             <span class="text-gray-400"> and like our internship post!</span>
         </p>
     </footer>
-
         <!-- Modal Pop-Up dengan Tema Hujan -->
         <div id="modal" class="fixed inset-0 bg-blue-900 bg-opacity-70 flex justify-center items-center hidden">
             <div id="modalContent" class="bg-white p-4 sm:p-6 rounded-lg shadow-xl max-w-lg w-full transform transition-all duration-300 ease-in-out relative overflow-hidden cursor-grab">
@@ -412,7 +411,6 @@
 
             </div>
         </div>
-
         <script>
             const playButton = document.getElementById('playButton');
             const modal = document.getElementById('modal');
@@ -432,7 +430,6 @@
                 }
             });
         </script>
-
     </div>     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -485,6 +482,7 @@
             const content4 = document.getElementById('content-4');
             const content5 = document.getElementById('content-5');
             const closing = document.getElementById('closing');
+            const content10 = document.getElementById('content-10');
 
             if (lang === 'su') {
                 title.innerHTML = '<i class="fas fa-heart text-red-500"></i> Pikeun Anjeun, Mutiara Perwitasari, Anu Pangsaena Dina Jagat Raya!';
@@ -495,6 +493,7 @@
                 content4.innerHTML = '<i class="fas fa-thumbs-up"></i> Hatur nuhun pikeun nampi abdi dina sagala kaayaan, abdi bakal tetep janten anu pangsaéna pikeun anjeun.';
                 content5.innerHTML = '<i class="fas fa-sad-tear"></i> Abdi terang anjeun capé, tapi abdi ogé capé ngan nepi ka anjeun angkat tanpa kabar!';
                 closing.innerHTML = '<i class="fas fa-laugh"></i> Ngirimkeun sagala asih, asih, asih! Falathin, anu moal bisa mundur tina cinta ieu!';
+                content10.innerHTML = 'Panginten panyungsi anjeun henteu ngadukung audio bisu (╥﹏╥)';
             } else if (lang === 'en') {
                 title.innerHTML = '<i class="fas fa-heart text-red-500"></i> To You, Mutiara Perwitasari, The Best Thing That Ever Happened to Me!';
                 greeting.innerHTML = '<i class="fas fa-envelope"></i> Hey, Muti-San! How’s everything? I miss you so much, are you as confused as I am?';
@@ -503,7 +502,7 @@
                 content3.innerHTML = '<i class="fas fa-question-circle"></i> Honestly, I just need some clarity here! If we keep doubting each other, nothing’s gonna work! Let’s talk openly, so we can make this relationship stronger and better!';
                 content4.innerHTML = '<i class="fas fa-thumbs-up"></i> Thanks for accepting me for who I am, I’ll always do my best for you!';
                 content5.innerHTML = '<i class="fas fa-sad-tear"></i> I know you’re tired, but I’m also drained just thinking about you being so far away!';
-                closing.innerHTML = '<i class="fas fa-laugh"></i> Naturally you all my love, love, love! Falathin, who can never stop loving you!';
+                content10.innerHTML = 'Maybe your browser does not support audio mute (╥﹏╥)';
             } else if (lang === 'jp') {
                 title.innerHTML = '<i class="fas fa-heart text-red-500"></i> 君への手紙に、ムティアラ・ペルウィタサリ、私の全て！<i class="fas fa-heart text-red-500"></i>';
                 greeting.innerHTML = '<i class="fas fa-envelope"></i> こんにちは、ムティさん！お元気ですか？あなたがいないと心が引き裂かれるほど寂しいよ！あなたのことを想うたびに胸がいっぱいになる！';
@@ -513,6 +512,7 @@
                 content4.innerHTML = '<i class="fas fa-hands-clapping"></i> あなたが私をそのまま受け入れてくれるその愛、私は一生守るよ！あなたのために何もかも捧げる覚悟があるんだ、私たちの愛をもっと深く大きく育てたい！';
                 content5.innerHTML = '<i class="fas fa-sad-tear"></i> あなたが疲れているのはわかっているよ、でも私もあなたがいないと心が引き裂かれるほど寂しい！お願い、あなたを感じていたい、毎分、毎秒あなたと一緒にいたい！';
                 closing.innerHTML = '<i class="fas fa-laugh-wink"></i> 愛を込めて、愛、愛！<i class="fas fa-heart text-red-500"></i> ファラティン、あなたを永遠に愛し続ける！<i class="fas fa-heart text-red-500"></i>';
+                content10.innerHTML = 'あなたのブラウザは音声ミュートをサポートしていない可能性があります (╥﹏╥)';
             } else if (lang === 'ko') {
                 title.innerHTML = '<i class="fas fa-heart text-red-500"></i> 당신에게, 무티아라 페르위타사리, 나의 모든 것!';
                 greeting.innerHTML = '<i class="fas fa-envelope"></i> 안녕하세요, 무티님! 어떻게 지내세요? 저는 당신이 너무 보고 싶어요, 저처럼 혼란스러우신가요?';
@@ -522,6 +522,7 @@
                 content4.innerHTML = '<i class="fas fa-thumbs-up"></i> 저를 있는 그대로 받아주셔서 감사합니다. 저는 항상 당신을 위해 최선을 다할게요!';
                 content5.innerHTML = '<i class="fas fa-sad-tear"></i> 당신도 지친 걸 알고 있어요, 하지만 당신이 멀리 떠나 있는 것만 생각해도 너무 힘들어요!';
                 closing.innerHTML = '<i class="fas fa-laugh"></i> 모든 사랑을 담아, 사랑, 사랑! 당신을 절대 그만 사랑할 수 없는 팔라틴!';
+                content10.innerHTML = '귀하의 브라우저가 오디오 음소거를 지원하지 않는 것 같습니다. (╥﹏╥)';
             }
 
             updateButtonText(lang);
