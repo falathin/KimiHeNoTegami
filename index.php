@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply Vignette Effect on the Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 182, 193, 0.6)); /* Soft Sakura gradient */
+            background-size: cover;
+            background-attachment: fixed; /* Keeps background fixed while scrolling */
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden; /* Prevents scrollbars from appearing */
+        }
+
+        /* Background Image */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://3.bp.blogspot.com/-WwHL4qfNF0g/VOsr8S07q8I/AAAAAAAAApw/eyxM9_L71j8/s1600/Sakura-Garden.jpeg'); /* Sakura flowers */
+            background-size: cover;
+            background-position: center; /* Perfect background positioning */
+            opacity: 0.5; /* Softens the image for a delicate effect */
+            filter: blur(5px); /* Soft blur effect */
+            z-index: -1; /* Ensures the Sakura image stays behind the content */
+        }
+
+        /* Vignette Effect using radial-gradient */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+            pointer-events: none; /* Ensures it doesn't block interaction with elements */
+            z-index: -1; /* Ensures it stays behind the content */
+        }
+        
+        /* Typing animation */
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid rgba(255, 255, 255, 0.75); /* Cursor effect */
+            animation: typing 4s steps(30) 1s 1 normal both, blinkCaret .75s step-end infinite;
+        }
+    
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+    
+        /* Blinking cursor effect */
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+    
+        /* Heartbeat Animation for Elements */
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+    
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    
+        /* Hover Effect for SVG Icons */
+        .hover-glow svg {
+            transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+        }
+    
+        /* Sakura-inspired Hover Effect for Icons */
+        .hover-glow svg:hover {
+            box-shadow: 0 0 20px rgba(255, 182, 193, 0.8), 0 0 30px rgba(255, 105, 180, 0.6); /* Soft pink pastel shadow */
+            transform: scale(1.1); /* Slight zoom on hover */
+            border-radius: 100%; /* Rounded corners for the icon */
+            transition: all 0.3s ease-in-out; /* Smooth transition */
+        }
+    
+        /* Button Styling with Elegant Hover Effect */
+        button {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Focus on color change and shadow */
+        }
+    
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Softens the shadow on hover */
+        }
+    
+        /* Neon Text Effect on Headings */
+        h1, h2, h3 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 36px;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 0, 150, 0.6);
+        }
+    
+        h1:hover, h2:hover, h3:hover {
+            color: #ff00cc;
+            text-shadow: 0 0 20px rgba(255, 0, 150, 0.8), 0 0 30px rgba(255, 0, 200, 0.6);
+        }
+    
+        /* Smooth Scroll Effect */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="text-center">
+            <button onclick="navigateToLetter()" class="relative group hover:scale-110 transform transition-all duration-300 hover-glow bounce">
+                <svg height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 512 512" xml:space="preserve">
+                    <ellipse style="fill:#9EA7DB;" cx="256" cy="256" rx="256" ry="256"/>
+                    <path style="fill:#8C95C9;" d="M244.225,511.72L108.929,376.842l249.536-233.737l150.798,150.363
+                        C491.132,417.09,384.656,512,256,512C252.052,512,248.129,511.896,244.225,511.72z"/>
+                    <polygon style="fill:#E3C04D;" points="108.929,195.002 393.919,195.002 393.919,376.843 108.929,376.843 "/>
+                    <path style="fill:#FAD55C;" d="M179.815,251.597l53.177,42.387l18.314,14.52l17.82-14.165l53.793-42.677
+                        c94.991-74.667,94.991-38.655,0-113.323l-53.793-42.676l-17.82-14.166l-18.314,14.521l-53.177,42.387
+                        C85.109,213.041,85.109,176.962,179.815,251.597z"/>
+                    <path style="fill:#E3C04D;" d="M390.525,201.86c9.999-10.334-0.695-15.242-32.059-37.195v60.105L390.525,201.86z"/>
+                    <polygon style="fill:#F8F8F8;" points="251.304,308.504 358.465,224.769 358.465,143.106 331.288,115.931 151.58,115.931 
+                        151.58,229.849 "/>
+                    <g>
+                        <polygon style="fill:#FAD55C;" points="108.929,203.778 108.991,203.849 218.859,287.315 108.9,372.445 108.932,284.55 "/>
+                        <polygon style="fill:#FAD55C;" points="393.921,203.942 393.859,204.012 284.474,287.14 393.903,372.825 393.87,284.55 "/>
+                    </g>
+                    <polygon style="fill:#F0CA4D;" points="281.556,289.656 251.341,313.701 221.417,290.152 180.432,321.948 108.929,376.842 
+                        251.428,376.842 393.921,376.842 322.451,322.015 "/>
+                    <path style="fill:#FF8C8A;" d="M251.472,186.739c0-13.676-11.087-24.762-24.763-24.762s-24.762,11.087-24.762,24.762
+                        c0,32.989,37.555,47.748,49.525,68.546c11.97-20.798,49.525-35.557,49.525-68.546c0-13.676-11.086-24.762-24.762-24.762
+                        C262.56,161.977,251.472,173.063,251.472,186.739z"/>
+                    <g>
+                        <path style="fill:#FA7876;" d="M248.286,250.585c1.194,1.539,2.267,3.102,3.187,4.7c11.97-20.799,49.525-35.558,49.525-68.547
+                            c0-13.676-11.087-24.763-24.762-24.763c-1.08,0-2.144,0.07-3.187,0.204c12.17,1.563,21.576,11.963,21.576,24.559
+                            C294.625,217.191,262.622,232.11,248.286,250.585z"/>
+                        <path style="fill:#FA7876;" d="M251.501,185.552c-1.549-17.439-15.535-23.576-24.792-23.576c-1.079,0-2.144,0.07-3.187,0.204
+                            c12.171,1.563,24.792,22.933,24.792,35.529C248.315,193.291,249.473,189.143,251.501,185.552z"/>
+                    </g>
+                    <polygon style="fill:#FBFBFB;" points="331.289,115.93 358.464,143.107 331.289,143.107 "/>
+                    <polygon style="fill:#EAEAED;" points="358.464,170.283 331.289,143.107 358.464,143.107 "/>
+                </svg>
+            </button><br><br>
+            <p class="mt-6 text-white text-lg sm:text-xl font-bold typewriter">Klik untuk membuka surat cinta! 💌</p>
+    </div>
+    <script>
+        function navigateToLetter() {
+            window.location.href = "love-letter.php";
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

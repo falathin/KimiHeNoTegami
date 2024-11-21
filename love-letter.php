@@ -238,18 +238,12 @@
     <footer>
     <div class="rounded-lg p-2 shadow-sm flex items-center space-x-3 max-w-sm mx-auto mt-8 mb-4 border-t border-blue-400 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 relative bg-cover bg-center group" 
         style="background-image: url('https://i.ytimg.com/vi/DR43SQx8Ybc/maxresdefault.jpg');">
-        <!-- Overlay untuk membuat teks lebih jelas -->
         <div class="absolute inset-0 bg-blue-900 bg-opacity-30 rounded-lg group-hover:bg-opacity-40 transition duration-300"></div>
-        <!-- Konten Footer -->
         <div class="relative z-10 flex items-center w-full space-x-3">
-            <!-- Thumbnail Lagu -->
             <div class="w-10 h-10 bg-blue-300 rounded-md flex items-center justify-center relative overflow-hidden group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-purple-500 transition duration-300">
-                <!-- Background dengan blur -->
                 <div class="absolute inset-0 bg-blue-300 blur-md group-hover:opacity-50 transition duration-300"></div>
-                <!-- Ikon Payung -->
                 <i class="fas fa-umbrella text-white text-xl relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
             </div>
-            <!-- Informasi Lagu dengan Marquee -->
             <div class="flex-1">
                 <p class="text-white font-medium text-sm group-hover:text-blue-200 transition duration-300">
                     <marquee behavior="scroll" direction="left" scrollamount="6">Oh! Asmara (Instrumental) ~ ♫</marquee>
@@ -258,26 +252,20 @@
                     <marquee behavior="scroll" direction="left" scrollamount="6">☂ Kobo Kanaeru ☂</marquee>
                 </p>
             </div>
-        <!-- Tombol Play dengan Animasi Berputar -->
         <button id="playButton" class="bg-transparent text-white rounded-md w-8 h-8 flex items-center justify-center border-2 border-white transition-transform duration-300 ease-in-out hover:scale-125 hover:bg-blue-400 hover:text-blue-200">
             <i class="fas fa-music text-white animate-spin-slow"></i> <!-- Ikon Melodi -->
         </button>
         </div>
-        <!-- SVG Bunga Sakura -->
         <div class="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            <!-- Bunga Sakura Pertama -->
             <svg class="absolute w-8 h-8 text-pink-300 animate-float top-5 left-14 hover:text-pink-400 transition duration-300 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
             </svg>
-            <!-- Bunga Sakura Kedua -->
             <svg class="absolute w-10 h-10 text-pink-400 animate-float top-3 right-12 hover:text-pink-500 transition duration-300 ease-in-out transform hover:rotate-12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
             </svg>
-            <!-- Bunga Sakura Ketiga (lebih kecil) -->
             <svg class="absolute w-6 h-6 text-pink-200 animate-float top-3 left-10 hover:text-pink-300 transition duration-300 ease-in-out transform hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
             </svg>
-            <!-- Bunga Sakura Keempat (dengan opacity berkurang) -->
             <svg class="absolute w-7 h-7 text-pink-300 opacity-80 animate-float top-2 right-8 hover:text-pink-400 transition duration-300 ease-in-out transform hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M12 2c1.1 0 2 .9 2 2v4h4c1.1 0 2 .9 2 2s-.9 2-2 2h-4v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4H6c-1.1 0-2-.9-2-2s.9-2 2-2h4V4c0-1.1.9-2 2-2zm0 12c.83 0 1.5-.67 1.5-1.5S12.83 11 12 11s-1.5.67-1.5 1.5S11.17 14 12 14z"/>
             </svg>
@@ -285,30 +273,101 @@
     </div>
     </footer>
 
+    <audio autoplay>
+        <source src="Oh! Asmara （Instrumental）.mp4" type="audio/mp3">
+    </audio>
+
     <br>
 
-    <!-- Modal Pop-Up untuk YouTube -->
-    <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center hidden">
-        <div class="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full transform transition-all duration-300 ease-in-out scale-95 hover:scale-100">
-            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl transition duration-200 ease-in-out transform hover:scale-125">
-                <i class="fas fa-times-circle"></i> <!-- Ikon X untuk menutup modal -->
-            </button>
-            <h2 class="text-blue-800 font-semibold text-2xl mb-4 flex items-center">
-                <i class="fas fa-video text-blue-600 text-3xl mr-2"></i> Listen the Song!
-            </h2>
-            <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/_YRNGQ3gq6w?autoplay=1&controls=0&loop=1&playlist=_YRNGQ3gq6w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
+    <footer>
+        <p class="mt-4 text-center text-gray-500 text-sm">
+            <span class="text-gray-400">Designed with <i class="text-red-500 fas fa-heart"></i> by</span>
+            <a href="https://www.instagram.com/p/DCJp7uuTbJg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="text-blue-500 font-semibold hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover:underline flex items-center justify-center space-x-2">
+                <span>Follow me on</span>
+                <span class="text-blue-600">Instagram</span>
+                <i class="fab fa-instagram text-blue-600"></i>
+            </a>
+            <span class="text-gray-400"> and like our internship post!</span>
+        </p>
+    </footer>
 
-    <p class="mt-4 text-center text-gray-500 text-sm">
-        <span class="text-gray-400">Designed with <i class="text-red-500 fas fa-heart"></i> by</span>
-        <a href="https://www.instagram.com/p/DCJp7uuTbJg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="text-blue-500 font-semibold hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover:underline flex items-center justify-center space-x-2">
-            <span>Follow me on</span>
-            <span class="text-blue-600">Instagram</span>
-            <i class="fab fa-instagram text-blue-600"></i>
-        </a>
-        <span class="text-gray-400"> and like our internship post!</span>
-    </p>
+        <!-- Modal Pop-Up dengan Tema Hujan -->
+        <div id="modal" class="fixed inset-0 bg-blue-900 bg-opacity-70 flex justify-center items-center hidden">
+            <div id="modalContent" class="bg-white p-4 sm:p-6 rounded-lg shadow-xl max-w-lg w-full transform transition-all duration-300 ease-in-out relative overflow-hidden cursor-grab">
+                <!-- Efek Hujan -->
+                <div class="absolute inset-0 bg-[url('https://i.ibb.co/k8zkN5Z/rain-pattern.png')] opacity-30 pointer-events-none"></div>
+
+                <!-- Tombol Tutup -->
+                <button id="closeModal" class="absolute top-2 right-2 text-blue-400 hover:text-blue-600 text-xl sm:text-2xl transition transform duration-200 hover:scale-125 z-10">
+                    <i class="fas fa-times-circle"></i>
+                </button>
+
+                <!-- Header Modal -->
+                <h2 class="text-blue-600 font-bold text-lg sm:text-2xl mb-4 flex items-center z-10">
+                    <i class="fas fa-cloud-rain text-blue-400 text-2xl sm:text-3xl mr-2"></i> Lirik Lagu "Oh! Asmara~☂"
+                </h2>
+
+                <!-- Konten Lirik -->
+                <div class="bg-blue-50 p-4 rounded-lg shadow-inner relative z-10 overflow-y-auto max-h-[70vh] sm:max-h-[75vh]">
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Dag-dig-dug hatiku<br>
+                        Saat aromamu lewati hidungku<br>
+                        Melotot mataku<br>
+                        Melihatmu lewat di depanku<br>
+                        Seorang biasa saja<br>
+                        Apa pantas 'tuk bersanding denganmu? (Denganmu)<br>
+                        Overthinking, tapi gak mau ambil pusing<br>
+                        Karena aku bukan kaum mendang-mending<br>
+                        Oh, asmara berdebar rasanya ku di dekatmu<br>
+                        Oh, asmara dengar bisikan cinta, lirih matamu<br>
+                        Hantam jantungku (oh, oh, asmara)
+                    </p>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                        Hari ke sekian<br>
+                        Masih tak berhasil mendekatimu<br>
+                        Ugh, bagaimana melelehkan beku hatimu?<br>
+                        Ugh!<br>
+                        "Mending nyerah, dah?" Oh, tentu tidak (tidak)<br>
+                        Demi gapai impian, kita harus terus belajar<br>
+                        Belajar memahami bahasa cintamu<br>
+                        Ehe!<br>
+                        Oh, asmara berdebar rasanya (rasanya) ku di dekatmu (di dekatmu)<br>
+                        Oh, asmara dengar bisikan cinta, lirih matamu, hu-uh-uuh<br>
+                        Oh, asmara balas sinyal cinta ku, sekali saja<br>
+                        Oh, asmara tidak adakah ruang dalam hatimu, hu-uh-uuh<br>
+                        Tersisa untukku?
+                    </p>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                        Sore itu<br>
+                        Tumben-tumbenan kau duluan<br>
+                        Yang datang menghampiriku (oh, asmara datanglah padaku)<br>
+                    </p>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                        Oh, asmara berdebar rasanya ku di dekatmu<br>
+                        Oh, asmara dengar bisikan cinta, lirih matamu, hu-uh-uuh, hoo<br>
+                    </p>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                        Oh, asmara berdebar rasanya (rasanya) ku di dekatmu<br>
+                        Oh, asmara dengar bisikan cinta, lirih matamu, hu-uh-uuh<br>
+                        Oh, asmara (berdebar rasanya), di-ba-ri-ba-ri-di, da-ra-da (ku di dekatmu)<br>
+                        Oh, asmara terjawab semua sudah teka-tekimu, hmm-mm (teka-tekimu)<br>
+                        Karena kini ku telah menjadi<br>
+                    </p>
+                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                        Milikmu (milikmu, milikmu, milikmu, milikmu)<br>
+                        Milikmu<br>
+                        Milikmu<br>
+                    </p>
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center mt-4 sm:mt-6 relative z-10">
+                    <button id="closeModalButton" class="px-4 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-200">
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
 
     <script>
         const playButton = document.getElementById('playButton');
@@ -387,7 +446,7 @@
             const closing = document.getElementById('closing');
         
             if (lang === 'su') {
-                title.innerHTML = '<i class="fas fa-heart text-red-500"></i> Pikeun Anjeun, Mutiara Perwitasari, Anu Pangsaéna Dina Jagat Raya!';
+                title.innerHTML = '<i class="fas fa-heart text-red-500"></i> Pikeun Anjeun, Mutiara Perwitasari, Anu Pangsaena Dina Jagat Raya!';
                 greeting.innerHTML = '<i class="fas fa-envelope"></i> Euy, Muti-San! Kumaha kabarna? Abdi rindu pisan ka anjeun, dupi anjeun teu bingung?';
                 content.innerHTML = '<i class="fas fa-comment-dots"></i> Aya hal anu teu bisa abdi simpen deui! Naha anjeun sadar kumaha perasaan abdi? Urang geus babarengan, tapi nalika anjeun nyarios yén anjeun masih nganggep abdi rerencangan, abdi jadi teu bisa ngaduga naon anu kudu dipilampah!';
                 content2.innerHTML = '<i class="fas fa-heart"></i> Nanging, ulah hariwang, abdi teu ambek! Abdi ngan hayang terang, kumaha haté anjeun sabenerna? Abdi bener-bener nyaah pisan ka anjeun, jeung abdi miharep hubungan urang tiasa langkung bermakna tina sakadar status, anu salawasna!';

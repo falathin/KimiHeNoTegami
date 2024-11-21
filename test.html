@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Hujan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom cursor for dragging */
+        .cursor-grab {
+            cursor: grab;
+        }
+        .cursor-grabbing {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body class="bg-blue-900 flex items-center justify-center min-h-screen">
+
+    <!-- Tombol untuk Memunculkan Modal -->
+    <button id="openModalButton" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all">
+        Buka Modal Lirik
+    </button>
+
+    <!-- Modal Pop-Up dengan Tema Hujan -->
+    <div id="modal" class="fixed inset-0 bg-blue-900 bg-opacity-70 flex justify-center items-center hidden">
+        <div id="modalContent" class="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full transform transition-all duration-300 ease-in-out relative overflow-hidden cursor-grab">
+            <!-- Efek Hujan -->
+            <div class="absolute inset-0 bg-[url('https://i.ibb.co/k8zkN5Z/rain-pattern.png')] opacity-30 pointer-events-none"></div>
+
+            <!-- Tombol Tutup -->
+            <button id="closeModal" class="absolute top-2 right-2 text-blue-400 hover:text-blue-600 text-2xl transition transform duration-200 hover:scale-125 z-10">
+                <i class="fas fa-times-circle"></i>
+            </button>
+
+            <!-- Header Modal -->
+            <h2 class="text-blue-600 font-bold text-2xl mb-4 flex items-center z-10">
+                <i class="fas fa-cloud-rain text-blue-400 text-3xl mr-2"></i> Lirik Lagu "Oh! Asmara~☂"
+            </h2>
+
+            <!-- Konten Lirik -->
+            <div class="bg-blue-50 p-4 rounded-lg shadow-inner relative z-10 max-h-96 overflow-y-auto">
+                <p class="text-gray-600">
+                    Dag-dig-dug hatiku<br>
+                    Saat aromamu lewati hidungku<br>
+                    Melotot mataku<br>
+                    Melihatmu lewat di depanku<br>
+                    Seorang biasa saja<br>
+                    Apa pantas 'tuk bersanding denganmu? (Denganmu)<br>
+                    Overthinking, tapi gak mau ambil pusing<br>
+                    Karena aku bukan kaum mendang-mending<br>
+                    Oh, asmara berdebar rasanya ku di dekatmu<br>
+                    Oh, asmara dengar bisikan cinta, lirih matamu<br>
+                    Hantam jantungku (oh, oh, asmara)
+                </p>
+                <!-- Tambahkan semua lirik -->
+                <p class="text-gray-600 mt-4">
+                    Oh, asmara terjawab semua sudah teka-tekimu<br>
+                    Karena kini ku telah menjadi milikmu...
+                </p>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-6 relative z-10">
+                <button id="closeModalButton" class="px-4 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-200">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Elemen Modal
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modalContent');
+
+        // Tombol untuk Membuka Modal
+        const openModalButton = document.getElementById('openModalButton');
+
+        // Tombol untuk Menutup Modal
+        const closeModal = document.getElementById('closeModal');
+        const closeModalButton = document.getElementById('closeModalButton');
+
+        // Buka Modal
+        openModalButton.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        // Tutup Modal
+        const closeModalFunction = () => {
+            modal.classList.add('hidden');
+        };
+        closeModal.addEventListener('click', closeModalFunction);
+        closeModalButton.addEventListener('click', closeModalFunction);
+
+        // Draggable Modal
+        let isDragging = false;
+        let offset = { x: 0, y: 0 };
+
+        modalContent.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            modalContent.classList.add('cursor-grabbing');
+            modalContent.classList.remove('cursor-grab');
+            offset = {
+                x: e.clientX - modalContent.getBoundingClientRect().left,
+                y: e.clientY - modalContent.getBoundingClientRect().top,
+            };
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            modalContent.style.position = 'absolute';
+            modalContent.style.left = `${e.clientX - offset.x}px`;
+            modalContent.style.top = `${e.clientY - offset.y}px`;
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            modalContent.classList.add('cursor-grab');
+            modalContent.classList.remove('cursor-grabbing');
+        });
+    </script>
+</body>
+</html>
